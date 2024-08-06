@@ -1,0 +1,20 @@
+name: build and run
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: build the code
+        run: g++ main.cpp -o main
+      - name:  run
+        run: ./main
+    
+        
+      
